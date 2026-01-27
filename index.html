@@ -3,341 +3,238 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Анастасия & Денис</title>
+
+<title>Приглашение на свадьбу</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
 :root {
-    --accent: #c0392b;
-    --bg: #faf7f4;
-    --card: #ffffff;
+  --cream: #faf6f2;
+  --powder: #e8cfc4;
+  --accent: #c9a89a;
+  --text: #4a3f3a;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    font-family: 'Georgia', serif;
-    background: var(--bg);
-    color: #333;
-    overflow-x: hidden;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  overflow-x: hidden;
 }
 
-/* ===== АНИМАЦИЯ БЛОКОВ ===== */
-.fade {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease;
-}
-.fade.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* ===== ОБЩЕЕ ===== */
 section {
-    padding: 70px 20px;
-}
-.container {
-    max-width: 900px;
-    margin: auto;
-}
-
-/* ===== 1 БЛОК ===== */
-.hero {
-    background: url("aseev.jpg") center/cover no-repeat;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.hero-box {
-    background: rgba(255,255,255,0.85);
-    padding: 35px;
-    border-radius: 25px;
-    text-align: center;
-}
-.hero h1 {
-    margin: 0;
-    font-size: 36px;
-}
-.hero p {
-    margin-top: 10px;
-    font-size: 18px;
+  min-height: 100vh;
+  padding: 80px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* ===== 2 БЛОК ===== */
-.invite {
-    background: linear-gradient(135deg, #fff, #f1e8e3);
-    border-radius: 30px;
-    padding: 45px 25px;
-    text-align: center;
-}
-.invite p {
-    font-size: 18px;
-    line-height: 1.6;
-}
-
-/* ===== КАЛЕНДАРЬ ===== */
-.calendar-card {
-    background: var(--card);
-    border-radius: 30px;
-    padding: 35px;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-}
-.month {
-    font-size: 20px;
-    margin-bottom: 15px;
-}
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-th, td {
-    padding: 10px;
-}
-.marked {
-    background: var(--accent);
-    color: white;
-    border-radius: 50%;
+.block {
+  background: rgba(255,255,255,0.85);
+  max-width: 900px;
+  width: 100%;
+  padding: 80px 40px;
+  border-radius: 40px;
+  text-align: center;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
 }
 
-/* ===== ТАЙМЕР ===== */
-.timer-card {
-    background: linear-gradient(135deg, #fff, #f3e9e4);
-    border-radius: 30px;
-    padding: 40px 25px;
-    text-align: center;
-}
-#timer {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 25px;
-}
-#timer div {
-    background: white;
-    border-radius: 20px;
-    padding: 15px;
-    width: 70px;
-}
-#timer span {
-    font-size: 26px;
-    font-weight: bold;
-    display: block;
-}
-#timer small {
-    font-size: 12px;
-    color: #777;
+.block.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* ===== МЕСТО ===== */
-.place {
-    background: linear-gradient(135deg, #f8f3ef, #ffffff);
-    border-radius: 30px;
-    padding: 45px 25px;
-    text-align: center;
-}
-.place p {
-    font-size: 18px;
-    margin: 12px 0;
+h1, h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
 }
 
-/* ===== ФОРМА ===== */
-.form-card {
-    background: var(--card);
-    border-radius: 30px;
-    padding: 40px 25px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-}
-label {
-    display: block;
-    margin-top: 15px;
-}
-input, select {
-    width: 100%;
-    padding: 12px;
-    margin-top: 5px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-}
-button {
-    margin-top: 25px;
-    width: 100%;
-    padding: 14px;
-    background: var(--accent);
-    color: white;
-    border: none;
-    border-radius: 12px;
-    font-size: 18px;
-    cursor: pointer;
+h1 {
+  font-size: 52px;
+  margin-bottom: 20px;
 }
 
-/* ===== ЛЕПЕСТКИ ===== */
+h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  font-size: 18px;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+}
+
+.names {
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+
+.date {
+  font-size: 22px;
+  margin-bottom: 40px;
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.timer div {
+  background: var(--powder);
+  padding: 20px 24px;
+  border-radius: 20px;
+  min-width: 90px;
+}
+
+.timer span {
+  display: block;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.timer small {
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.info p {
+  font-size: 20px;
+  line-height: 1.6;
+  margin: 10px 0;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 18px 36px;
+  border-radius: 50px;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+/* лепестки */
 .petal {
-    position: fixed;
-    top: -20px;
-    width: 12px;
-    height: 12px;
-    background: rgba(255,182,193,0.8);
-    border-radius: 50%;
-    pointer-events: none;
-    animation: fall 6s linear forwards;
-}
-@keyframes fall {
-    to {
-        transform: translateY(110vh) rotate(360deg);
-        opacity: 0;
-    }
+  position: fixed;
+  top: -50px;
+  width: 14px;
+  height: 14px;
+  background: var(--powder);
+  border-radius: 50%;
+  opacity: 0.6;
+  pointer-events: none;
 }
 
-/* ПК */
-@media (min-width: 768px) {
-    .hero h1 { font-size: 48px; }
+@media (max-width: 600px) {
+  h1 { font-size: 38px; }
+  .names { font-size: 32px; }
+  .block { padding: 60px 20px; }
 }
 </style>
 </head>
 
 <body>
 
-<section class="hero">
-    <div class="hero-box fade">
-        <h1>Анастасия & Денис</h1>
-        <p>20 июня 2026</p>
-    </div>
+<section>
+  <div class="block">
+    <div class="subtitle">ПРИГЛАШЕНИЕ НА СВАДЬБУ</div>
+    <div class="names">Анастасия & Денис</div>
+    <div class="date">20 июня 2026</div>
+  </div>
 </section>
 
 <section>
-    <div class="container invite fade">
-        <h2>Дорогие гости!</h2>
-        <p>
-            Приглашаем вас стать частью нашего самого незабываемого,
-            долгожданного и трогательного события —
-            разделить вместе с нами день любви 🤍
-        </p>
+  <div class="block">
+    <h2>До нашего дня</h2>
+    <div class="timer" id="timer">
+      <div><span id="days">0</span><small>ДНЕЙ</small></div>
+      <div><span id="hours">0</span><small>ЧАСОВ</small></div>
+      <div><span id="minutes">0</span><small>МИНУТ</small></div>
+      <div><span id="seconds">0</span><small>СЕКУНД</small></div>
     </div>
+  </div>
 </section>
 
 <section>
-    <div class="container calendar-card fade">
-        <h2>Дата свадьбы</h2>
-        <div class="month">Июнь 2026</div>
-        <table>
-            <tr>
-<th>Пн</th><th>Вт</th><th>Ср</th><th>Чт</th><th>Пт</th><th>Сб</th><th>Вс</th>
-            </tr>
-            <tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td></tr>
-            <tr><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td></tr>
-            <tr><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td class="marked">20</td><td>21</td></tr>
-            <tr><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td></tr>
-            <tr><td>29</td><td>30</td><td></td><td></td><td></td><td></td><td></td></tr>
-        </table>
-    </div>
-</section>
+  <div class="block info">
+    <h2>Детали торжества</h2>
+    <p>📅 20 июня 2026</p>
+    <p>⏰ 16:00</p>
+    <p>📍 Место будет указано позже</p>
 
-<section>
-    <div class="container timer-card fade">
-        <h2>До нашего дня осталось</h2>
-        <div id="timer">
-            <div><span id="days">0</span><small>дней</small></div>
-            <div><span id="hours">0</span><small>часов</small></div>
-            <div><span id="minutes">0</span><small>минут</small></div>
-            <div><span id="seconds">0</span><small>секунд</small></div>
-        </div>
-    </div>
-</section>
-
-<section>
-    <div class="container place fade">
-        <h2>Место проведения</h2>
-        <p><strong>Выездная регистрация</strong><br>Усадьба Асеевых</p>
-        <p><strong>Банкет</strong><br>г. Тамбов, ресторан «Базилик»</p>
-    </div>
-</section>
-
-<section>
-    <div class="container form-card fade">
-        <h2>Анкета гостя</h2>
-        <form id="weddingForm">
-            <label>Имя и фамилия
-                <input type="text" name="name" required>
-            </label>
-
-            <label>Присутствие
-                <select name="presence" required>
-                    <option>Буду с удовольствием</option>
-                    <option>Не смогу</option>
-                </select>
-            </label>
-
-            <label>Алкоголь
-                <select name="alcohol">
-                    <option>Вино</option>
-                    <option>Шампанское</option>
-                    <option>Крепкий алкоголь</option>
-                    <option>Не пью</option>
-                </select>
-            </label>
-
-            <button type="submit">Отправить</button>
-        </form>
-    </div>
+    <a class="button" href="https://tinyurl.com/nastya-denis" target="_blank">
+      Открыть приглашение
+    </a>
+  </div>
 </section>
 
 <script>
-// АНИМАЦИЯ
+// анимация при скролле
+const blocks = document.querySelectorAll('.block');
 const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('show');
-    });
-});
-document.querySelectorAll('.fade').forEach(el => observer.observe(el));
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+}, { threshold: 0.3 });
 
-// ТАЙМЕР
-const weddingDate = new Date("2026-06-20T00:00:00").getTime();
+blocks.forEach(block => observer.observe(block));
+
+// таймер
+const targetDate = new Date('2026-06-20T00:00:00');
+
 setInterval(() => {
-    const now = new Date().getTime();
-    const diff = weddingDate - now;
+  const now = new Date();
+  const diff = targetDate - now;
 
-    document.getElementById("days").innerText = Math.floor(diff / (1000*60*60*24));
-    document.getElementById("hours").innerText = Math.floor((diff / (1000*60*60)) % 24);
-    document.getElementById("minutes").innerText = Math.floor((diff / (1000*60)) % 60);
-    document.getElementById("seconds").innerText = Math.floor((diff / 1000) % 60);
+  const d = Math.floor(diff / 1000 / 60 / 60 / 24);
+  const h = Math.floor(diff / 1000 / 60 / 60) % 24;
+  const m = Math.floor(diff / 1000 / 60) % 60;
+  const s = Math.floor(diff / 1000) % 60;
+
+  days.textContent = d;
+  hours.textContent = h;
+  minutes.textContent = m;
+  seconds.textContent = s;
 }, 1000);
 
-// ЛЕПЕСТКИ
-window.addEventListener("scroll", () => {
-    if (Math.random() > 0.7) {
-        const petal = document.createElement("div");
-        petal.className = "petal";
-        petal.style.left = Math.random() * window.innerWidth + "px";
-        petal.style.animationDuration = 4 + Math.random() * 4 + "s";
-        document.body.appendChild(petal);
-        setTimeout(() => petal.remove(), 8000);
-    }
-});
+// лепестки
+setInterval(() => {
+  const petal = document.createElement('div');
+  petal.
+className = 'petal';
+  petal.style.left = Math.random() * 100 + 'vw';
+  petal.style.animation = fall ${5 + Math.random() * 5}s linear;
+  document.body.appendChild(petal);
 
-// TELEGRAM
-document.getElementById("weddingForm").addEventListener("submit", function(e) {
-    e.preventDefault();
+  setTimeout(() => petal.remove(), 10000);
+}, 500);
 
-    const data = new FormData(this);
-    const message = `
-💍 Новая анкета:
-👤 ${data.get('name')}
-✅ ${data.get('presence')}
-🍷 ${data.get('alcohol')}
-    `;
-
-    fetch(`https://api.telegram.org/bot8532373313:AAFGiUeqiy2JXq5F2feGys7h5DIBFT8Eb38/sendMessage`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-            chat_id: "498780557",
-            text: message
-        })
-    }).then(() => {
-        alert("Спасибо! Мы вас очень ждём 🤍");
-        this.reset();
-    });
-});
+const style = document.createElement('style');
+style.innerHTML = `
+@keyframes fall {
+  to {
+    transform: translateY(120vh) rotate(360deg);
+    opacity: 0;
+  }
+}`;
+document.head.appendChild(style);
 </script>
 
 </body>
