@@ -3,24 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Денис и Анастасия — свадебное приглашение</title>
+<title>Денис и Анастасия — приглашение</title>
 
 <style>
-:root{
-  --accent:#9b3b3b;
-  --text:#2c2c2c;
-}
-
 *{box-sizing:border-box}
 
 body{
   margin:0;
   font-family: "Georgia", serif;
-  color:var(--text);
-  background:#eae4dc;
+  background: url("IMG_3280.png") center top / cover no-repeat fixed;
+  color:#2c2c2c;
 }
 
-/* ===== АНИМАЦИИ ===== */
+/* анимации */
 .fade{
   opacity:0;
   transform:translateY(30px);
@@ -31,57 +26,27 @@ body{
   transform:none;
 }
 
-/* ===== ОБЩИЕ ===== */
 section{
-  margin:80px auto;
   max-width:1100px;
+  margin:80px auto;
   padding:0 16px;
-}
-
-/* ===== ОБЛОЖКА ===== */
-.hero{
-  height:440px;
-  background:url("IMG_3277.jpeg") top center / cover no-repeat;
-  border-radius:28px;
-  position:relative;
-}
-
-.hero-content{
-  position:absolute;
-  inset:0;
-  display:flex;
-  justify-content:center;
-  padding-top:90px;
-}
-
-.hero h1{
-  font-size:44px;
   text-align:center;
-  font-weight:normal;
 }
 
-/* ===== ТЕКСТ ===== */
-.text-block{
-  text-align:center;
-  font-size:18px;
-  line-height:1.6;
+/* изображения-заголовки */
+.title-img,
+.section-img,
+.content-img{
+  max-width:100%;
+  display:block;
+  margin:0 auto 30px;
 }
 
-/* ===== КАЛЕНДАРЬ ===== */
+/* календарь */
 .calendar{
-  background:#fff;
-  border-radius:28px;
+  background:rgba(255,255,255,.85);
+  border-radius:24px;
   padding:40px;
-}
-
-.calendar h2{
-  text-align:center;
-  margin-bottom:10px;
-}
-
-.month{
-  text-align:center;
-  margin-bottom:20px;
 }
 
 table{
@@ -91,25 +56,23 @@ table{
 
 th,td{
   padding:8px;
-  text-align:center;
 }
 
 .mark{
-  background:var(--accent);
+  background:#9b3b3b;
   color:#fff;
   border-radius:50%;
 }
 
-/* ===== ТАЙМЕР ===== */
+/* таймер */
 .timer{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:12px;
-  text-align:center;
 }
 
 .timer div{
-  background:#fff;
+  background:rgba(255,255,255,.85);
   border-radius:20px;
   padding:16px;
 }
@@ -120,14 +83,7 @@ th,td{
   font-weight:bold;
 }
 
-/* ===== РАЗДЕЛИТЕЛЬ ===== */
-.pearl-divider{
-  height:140px;
-  background:url("IMG_3277.jpeg") center center / cover no-repeat;
-  border-radius:24px;
-}
-
-/* ===== ЛОКАЦИИ ===== */
+/* локации */
 .locations{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -135,14 +91,9 @@ th,td{
 }
 
 .location{
-  background:#fff;
-  border-radius:28px;
+  background:rgba(255,255,255,.88);
+  border-radius:24px;
   padding:30px;
-  text-align:center;
-}
-
-.location h3{
-  margin-top:0;
 }
 
 .location button{
@@ -151,96 +102,80 @@ th,td{
   padding:14px;
   border:none;
   border-radius:18px;
-  background:var(--accent);
+  background:#9b3b3b;
   color:#fff;
   font-size:16px;
 }
 
-/* ===== АНКЕТА ===== */
-.form-section{
-  background:url("IMG_3277.jpeg") bottom center / cover no-repeat;
-  border-radius:28px;
-  min-height:520px;
-  position:relative;
+/* анкета */
+.form-wrap{
+  background:rgba(255,255,255,.88);
+  border-radius:24px;
+  padding:40px;
 }
 
-.guest-form{
-  position:absolute;
-  inset:0;
-  padding:80px;
+form{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:14px;
 }
 
-.guest-form input[type="text"]{
+form input[type="text"]{
   grid-column:1 / -1;
   padding:12px;
-  border-radius:12px;
-  border:1px solid #ccc;
 }
 
-.guest-form label{
-  font-size:15px;
+form label{
+  text-align:left;
 }
 
-.guest-form button{
+form button{
   grid-column:1 / -1;
   margin-top:20px;
   padding:16px;
   border:none;
   border-radius:22px;
-  background:var(--accent);
+  background:#9b3b3b;
   color:#fff;
   font-size:18px;
 }
 
-/* ===== ФИНАЛ ===== */
-.final-text{
-  text-align:center;
-  font-style:italic;
-  margin-bottom:80px;
-}
-
-/* ===== АДАПТИВ ===== */
+/* адаптив */
 @media(max-width:768px){
-  .hero{height:360px}
-  .hero h1{font-size:34px}
   .locations{grid-template-columns:1fr}
-  .guest-form{
-    padding:40px;
-    grid-template-columns:1fr;
-  }
+  form{grid-template-columns:1fr}
 }
 </style>
 </head>
 
 <body>
 
-<section class="hero fade">
-  <div class="hero-content">
-    <h1>Денис и Анастасия</h1>
+<!-- ИМЕНА -->
+<section class="fade">
+  <img src="IMG_3281_1.png" class="title-img" alt="">
+</section>
+
+<!-- ДАТА -->
+<section class="fade">
+  <img src="IMG_3281_2.png" class="section-img" alt="">
+  <div class="calendar">
+    <table>
+      <tr><th>Пн</th><th>Вт</th><th>Ср</th><th>Чт</th><th>Пт</th><th>Сб</th><th>Вс</th></tr>
+      <tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td></tr>
+      <tr><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td></tr>
+      <tr><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td class="mark">20</td><td>21</td></tr>
+      <tr><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td></tr>
+      <tr><td>29</td><td>30</td></tr>
+    </table>
   </div>
 </section>
 
-<section class="text-block fade">
-  Мы будем счастливы разделить с вами один из самых важных дней нашей жизни.<br>
-  Этот вечер — про любовь, тепло и людей, которые действительно дороги.
+<!-- ТЕКСТ -->
+<section class="fade">
+  <img src="IMG_3281_3.png" class="content-img" alt="">
 </section>
 
-<section class="calendar fade">
-  <h2>Дата свадьбы</h2>
-  <div class="month">Июнь 2026</div>
-  <table>
-    <tr><th>Пн</th><th>Вт</th><th>Ср</th><th>Чт</th><th>Пт</th><th>Сб</th><th>Вс</th></tr>
-    <tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td></tr>
-    <tr><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td></tr>
-    <tr><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td class="mark">20</td><td>21</td></tr>
-    <tr><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td></tr>
-    <tr><td>29</td><td>30</td></tr>
-  </table>
-</section>
-
+<!-- ТАЙМЕР -->
 <section class="fade">
   <div class="timer">
     <div><span id="d">0</span>дней</div>
@@ -250,46 +185,45 @@ th,td{
   </div>
 </section>
 
-<section class="pearl-divider fade"></section>
-
-<section class="locations fade">
-  <div class="location">
-    <h3>Выездная регистрация</h3>
-    Усадьба Асеевых<br>
-    Тамбов, Набережная улица, 22
-    <button onclick="openMap('Тамбов, Набережная улица, 22')">Открыть карту</button>
-  </div>
-  <div class="location">
-    <h3>Банкет</h3>
-    Ресторан «Базилик»<br>
-    Тамбов, Селезнёвская улица, 2А
-    <button onclick="openMap('Тамбов, Селезнёвская улица, 2А')">Открыть карту</button>
+<!-- ЛОКАЦИЯ -->
+<section class="fade">
+  <img src="IMG_3281_4.png" class="section-img" alt="">
+  <div class="locations">
+    <div class="location">
+      Усадьба Асеевых<br>
+      Тамбов, Набережная улица, 22
+      <button onclick="openMap('Тамбов, Набережная улица, 22')">Открыть карту</button>
+    </div>
+    <div class="location">
+      Ресторан «Базилик»<br>
+      Тамбов, Селезнёвская улица, 2А
+      <button onclick="openMap('Тамбов, Селезнёвская улица, 2А')">Открыть карту</button>
+    </div>
   </div>
 </section>
 
-<section class="form-section fade">
-  <form class="guest-form">
-    <input type="text" placeholder="Имя и фамилия" required>
+<!-- АНКЕТА -->
+<section class="fade">
+  <img src="IMG_3281_5.png" class="section-img" alt="">
+  <div class="form-wrap">
+    <form>
+      <input type="text" placeholder="Имя и фамилия" required>
 
-    <label><input type="radio" name="presence"> Буду с удовольствием</label>
-    <label><input type="radio" name="presence"> Не смогу присутствовать</label>
-    <label><input type="radio" name="presence"> Отвечу позже</label>
+      <label><input type="radio" name="presence"> Буду с удовольствием</label>
+      <label><input type="radio" name="presence"> Не смогу присутствовать</label>
+      <label><input type="radio" name="presence"> Отвечу позже</label>
 
-    <label><input type="checkbox"> Вино красное — сухое</label>
-    <label><input type="checkbox"> Вино красное — полусладкое</label>
-    <label><input type="checkbox"> Вино белое — сухое</label>
-    <label><input type="checkbox"> Вино белое — полусладкое</label>
-    <label><input type="checkbox"> Шампанское</label>
-    <label><input type="checkbox"> Крепкий алкоголь</label>
-    <label><input type="checkbox"> Не употребляю алкоголь</label>
+      <label><input type="checkbox"> Вино красное — сухое</label>
+      <label><input type="checkbox"> Вино красное — полусладкое</label>
+      <label><input type="checkbox"> Вино белое — сухое</label>
+      <label><input type="checkbox"> Вино белое — полусладкое</label>
+      <label><input type="checkbox"> Шампанское</label>
+      <label><input type="checkbox"> Крепкий алкоголь</label>
+      <label><input type="checkbox"> Не употребляю алкоголь</label>
 
-    <button type="submit">ОТПРАВИТЬ</button>
-  </form>
-</section>
-
-<section class="final-text fade">
-  Нам важно понять, сможете ли вы быть с нами в этот день.<br>
-  Пожалуйста, дайте нам знать заранее.
+      <button type="submit">ОТПРАВИТЬ</button>
+    </form>
+  </div>
 </section>
 
 <script>
@@ -302,15 +236,21 @@ document.querySelectorAll(".fade").forEach(el=>obs.observe(el));
 /* таймер */
 const target=new Date("2026-06-20T00:00:00").getTime();
 setInterval(()=>{
-  const n=new Date().getTime();
+  const n=Date.now();
   const d=target-n;
-  document.getElementById("d").innerText=Math.max(0,Math.floor(d/86400000));
-  document.getElementById("h").innerText=Math.max(0,Math.floor(d/3600000)%24);
-  document.getElementById("m").innerText=Math.max(0,Math.floor(d/60000)%60);
-  document.getElementById("s").innerText=Math.max(0,Math.floor(d/1000)%60);
+  d>0 && (
+    dEl.textContent=Math.floor(d/86400000),
+    hEl.textContent=Math.floor(d/3600000)%24,
+    mEl.textContent=Math.floor(d/60000)%60,
+    sEl.textContent=Math.floor(d/1000)%60
+  )
 },1000);
 
-/* карты */
+const dEl=document.getElementById("d");
+const hEl=document.getElementById("h");
+const mEl=document.getElementById("m");
+const sEl=document.getElementById("s");
+
 function openMap(addr){
   window.open("https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(addr));
 }
