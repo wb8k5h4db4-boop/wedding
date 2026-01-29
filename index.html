@@ -6,272 +6,373 @@
 <title>Денис и Анастасия — приглашение</title>
 
 <style>
+/* ================= ОСНОВА ================= */
 :root{
-  --accent:#b53a3a;
-  --bg:#f9f6f2;
-  --card:#ffffff;
-  --text:#2e2e2e;
+  --paper:#f4efe8;
+  --paper-dark:#ece6dd;
+  --ink:#2c2c2c;
+  --accent:#9b3b3b;
+  --frame:#e1d8cc;
 }
 
 *{box-sizing:border-box}
 
 body{
   margin:0;
+  color:var(--ink);
   font-family: "Georgia", serif;
-  background:var(--bg);
-  color:var(--text);
+  background:
+    radial-gradient(circle at 10% 5%, #ffffffcc, transparent 45%),
+    radial-gradient(circle at 90% 95%, #ffffffcc, transparent 45%),
+    repeating-linear-gradient(
+      45deg,
+      var(--paper),
+      var(--paper) 2px,
+      var(--paper-dark) 2px,
+      var(--paper-dark) 4px
+    );
 }
 
-section{padding:60px 20px}
-.container{max-width:1100px;margin:auto}
+/* ================= ОБЩЕЕ ================= */
+section{
+  padding:60px 20px;
+}
 
-/* ===== АНИМАЦИИ ===== */
+.container{
+  max-width:900px;
+  margin:0 auto;
+}
+
+.card{
+  background:linear-gradient(180deg,#fff,#f7f3ec);
+  border-radius:32px;
+  padding:48px 36px;
+  position:relative;
+  box-shadow:
+    0 25px 50px rgba(0,0,0,.08),
+    inset 0 0 0 1px var(--frame);
+}
+
+.card::before{
+  content:"";
+  position:absolute;
+  inset:-14px;
+  border-radius:38px;
+  border:1px solid var(--frame);
+  pointer-events:none;
+}
+
+/* ================= АНИМАЦИИ ================= */
 .fade{
   opacity:0;
   transform:translateY(30px);
-  transition:0.8s ease;
+  transition:.9s ease;
 }
-.fade.show{opacity:1;transform:none}
+.fade.show{
+  opacity:1;
+  transform:none;
+}
 
-/* ===== ОБЛОЖКА ===== */
+/* ================= ОБЛОЖКА ================= */
 .hero{
-  min-height:100vh;
+  min-height:90vh;
   display:flex;
   align-items:center;
   justify-content:center;
-  background:linear-gradient(135deg,#fff,#f1ebe5);
 }
-.hero-box{
-  background:var(--card);
-  padding:50px;
-  border-radius:30px;
+
+.hero h1{
   text-align:center;
-}
-.hero h1{margin:0;font-size:42px}
-.hero p{margin-top:10px;font-size:18px}
-
-/* ===== КАРТОЧКИ ===== */
-.card{
-  background:var(--card);
-  border-radius:30px;
-  padding:40px;
-  box-shadow:0 15px 40px rgba(0,0,0,0.06);
+  font-size:42px;
+  margin:0;
+  letter-spacing:1px;
 }
 
-/* ===== КАЛЕНДАРЬ ===== */
-.calendar{text-align:center}
-table{width:100%;border-collapse:collapse}
-th,td{padding:10px}
+.hero h1 span{
+  display:block;
+  font-size:26px;
+  margin:10px 0;
+}
+
+.hero p{
+  text-align:center;
+  margin-top:20px;
+  font-size:18px;
+  line-height:1.6;
+}
+
+/* ================= ЗАГОЛОВКИ ================= */
+h2{
+  text-align:center;
+  font-size:26px;
+  margin:0 0 20px;
+}
+
+/* ================= КАЛЕНДАРЬ ================= */
+.calendar .month{
+  text-align:center;
+  margin-bottom:16px;
+  font-size:18px;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+th,td{
+  padding:8px;
+  text-align:center;
+  font-size:15px;
+}
+
 .mark{
   background:var(--accent);
   color:#fff;
   border-radius:50%;
 }
 
-/* ===== ТАЙМЕР ===== */
+/* ================= ТАЙМЕР ================= */
 .timer{
   display:flex;
-  justify-content:space-around;
-  margin-top:20px;
-}
-.timer div{
-  background:#fff;
-  padding:15px;
-  border-radius:20px;
-  width:80px;
+  justify-content:space-between;
+  gap:12px;
+  margin-top:25px;
 }
 
-/* ===== ЛОКАЦИИ ===== */
+.timer div{
+  flex:1;
+  background:#fff;
+  border-radius:20px;
+  padding:16px 10px;
+  text-align:center;
+  box-shadow:inset 0 0 0 1px var(--frame);
+}
+
+.timer span{
+  font-size:28px;
+  font-weight:bold;
+  display:block;
+}
+
+/* ================= ЛОКАЦИИ ================= */
 .locations{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:30px;
-}
-.location img{
-  width:100%;
-  border-radius:20px;
-  margin-bottom:15px;
-}
-.location button{
-  margin-top:15px;
-  padding:12px;
-  width:100%;
-  border:none;
-  border-radius:12px;
-  background:var(--accent);
-  color:#fff;
-  cursor:pointer;
+  gap:32px;
 }
 
-/* ===== ФОРМА ===== */
-label{display:block;margin-top:15px}
-input,select{
-  width:100%;
-  padding:12px;
-  border-radius:10px;
-  border:1px solid #ccc;
+.location h3{
+  text-align:center;
+  margin:18px 0 10px;
+  font-size:20px;
 }
-button.submit{
-  margin-top:25px;
+
+.location p{
+  text-align:center;
+  font-size:15px;
+  line-height:1.5;
+}
+
+.photo{
+  height:230px;
+  border-radius:22px;
+  background:
+    linear-gradient(135deg,#ddd,#bbb);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#666;
+  font-style:italic;
+  box-shadow:inset 0 0 0 1px var(--frame);
+}
+
+.location button{
+  margin-top:18px;
   width:100%;
   padding:14px;
   border:none;
-  border-radius:14px;
+  border-radius:18px;
+  background:var(--accent);
+  color:#fff;
+  font-size:16px;
+}
+
+/* ================= ФОРМА ================= */
+form label{
+  display:block;
+  margin-top:18px;
+  font-size:15px;
+}
+
+input,select{
+  width:100%;
+  padding:12px;
+  margin-top:6px;
+  border-radius:12px;
+  border:1px solid #ccc;
+  font-family:inherit;
+}
+
+.submit{
+  margin-top:28px;
+  width:100%;
+  padding:16px;
+  border:none;
+  border-radius:22px;
   background:var(--accent);
   color:#fff;
   font-size:18px;
-  cursor:pointer;
 }
 
-/* ===== МОБИЛКА ===== */
+/* ================= МОБИЛКА ================= */
 @media(max-width:768px){
   .locations{grid-template-columns:1fr}
   .hero h1{font-size:34px}
+  .hero h1 span{font-size:22px}
 }
 </style>
 </head>
 
 <body>
 
+<!-- ================= ОБЛОЖКА ================= -->
 <section class="hero">
-  <div class="hero-box fade">
-    <h1>Денис и Анастасия</h1>
-    <p>Будем рады разделить с вами особенный день</p>
+  <div class="container card fade">
+    <h1>Денис <span>и</span> Анастасия</h1>
+    <p>
+      Мы будем счастливы разделить с вами<br>
+      один из самых важных дней нашей жизни.
+    </p>
   </div>
 </section>
 
+<!-- ================= ДАТА ================= -->
 <section>
-<div class="container card fade calendar">
-  <h2>Дата свадьбы</h2>
-  <p>Июнь 2026</p>
-  <table>
-    <tr><th>Пн</th><th>Вт</th><th>Ср</th><th>Чт</th><th>Пт</th><th>Сб</th><th>Вс</th></tr>
-    <tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td></tr>
-    <tr><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td></tr>
-    <tr><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td class="mark">20</td><td>21</td></tr>
-    <tr><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td></tr>
-    <tr><td>29</td><td>30</td></tr>
-  </table>
-</div>
-</section>
-
-<section>
-<div class="container card fade">
-  <h2 style="text-align:center">До нашего дня осталось</h2>
-  <div class="timer">
-    <div><span id="d">0</span><br>дней</div>
-    <div><span id="h">0</span><br>часов</div>
-    <div><span id="m">0</span><br>минут</div>
-    <div><span id="s">0</span><br>секунд</div>
+  <div class="container card fade calendar">
+    <h2>Дата свадьбы</h2>
+    <div class="month">Июнь 2026</div>
+    <table>
+      <tr>
+        <th>Пн</th><th>Вт</th><th>Ср</th><th>Чт</th><th>Пт</th><th>Сб</th><th>Вс</th>
+      </tr>
+      <tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td></tr>
+      <tr><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td></tr>
+      <tr><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td class="mark">20</td><td>21</td></tr>
+      <tr><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td></tr>
+      <tr><td>29</td><td>30</td></tr>
+    </table>
   </div>
-</div>
 </section>
 
+<!-- ================= ТАЙМЕР ================= -->
 <section>
-<div class="container locations fade">
-  <div class="card location">
-    <img src="aseev.jpg">
-    <h3>Выездная регистрация</h3>
-    <p>Усадьба Асеевых<br>Тамбов, Набережная, 22</p>
-    <button onclick="openMap('Тамбов, Набережная улица, 22')">Открыть карту</button>
+  <div class="container card fade">
+    <h2>До нашего дня осталось</h2>
+    <div class="timer">
+      <div><span id="d">0</span>дней</div>
+      <div><span id="h">0</span>часов</div>
+      <div><span id="m">0</span>минут</div>
+      <div><span id="s">0</span>секунд</div>
+    </div>
   </div>
+</section>
 
-  <div class="card location">
-    <img src="basilik.jpg">
-    <h3>Банкет</h3>
-    <p>Ресторан «Базилик»<br>Тамбов, Селезнёвская, 2А</p>
-    <button onclick="openMap('Тамбов, Селезнёвская улица, 2А')">Открыть карту</button>
+<!-- ================= ЛОКАЦИИ ================= -->
+<section>
+  <div class="container locations fade">
+    <div class="card location">
+      <div class="photo">Фото усадьбы</div>
+      <h3>Выездная регистрация</h3>
+      <p>
+        Усадьба Асеевых<br>
+        Тамбов, Набережная улица, 22
+      </p>
+      <button onclick="openMap('Тамбов, Набережная улица, 22')">
+        Открыть карту
+      </button>
+    </div>
+
+    <div class="card location">
+      <div class="photo">Фото ресторана</div>
+      <h3>Банкет</h3>
+      <p>
+        Ресторан «Базилик»<br>
+        Тамбов, Селезнёвская улица, 2А
+      </p>
+      <button onclick="openMap('Тамбов, Селезнёвская улица, 2А')">
+        Открыть карту
+      </button>
+    </div>
   </div>
-</div>
 </section>
 
+<!-- ================= АНКЕТА ================= -->
 <section>
-<div class="container card fade">
-<h2>Анкета гостя</h2>
+  <div class="container card fade">
+    <h2>Анкета гостя</h2>
+    <form>
+      <label>Имя и фамилия
+        <input required>
+      </label>
 
-<form id="guestForm">
-  <label>Имя и фамилия
-    <input type="text" name="name" required>
-  </label>
+      <label>Присутствие
+        <select>
+          <option>Буду с удовольствием</option>
+          <option>Не смогу присутствовать</option>
+          <option>Отвечу позже</option>
+        </select>
+      </label>
 
-  <label>Присутствие
-    <select name="presence" required>
-      <option>Буду с удовольствием</option>
-      <option>Не смогу присутствовать</option>
-      <option>Отвечу позже</option>
-    </select>
-  </label>
+      <label>Алкоголь
+        <select>
+          <option>Вино красное — сухое</option>
+          <option>Вино красное — полусладкое</option>
+          <option>Вино белое — сухое</option>
+          <option>Вино белое — полусладкое</option>
+          <option>Шампанское</option>
+          <option>Крепкий алкоголь</option>
+          <option>Не употребляю алкоголь</option>
+        </select>
+      </label>
 
-  <label>Алкоголь
-    <select name="alcohol">
-      <option>Вино красное — сухое</option>
-      <option>Вино красное — полусладкое</option>
-      <option>Вино белое — сухое</option>
-      <option>Вино белое — полусладкое</option>
-      <option>Шампанское</option>
-      <option>Крепкий алкоголь</option>
-      <option>Не употребляю алкоголь</option>
-    </select>
-  </label>
-
-  <button type="submit" class="submit">Отправить</button>
-</form>
-</div>
+      <button class="submit">Отправить</button>
+    </form>
+  </div>
 </section>
 
+<!-- ================= ФИНАЛ ================= -->
 <section>
-<div class="container fade" style="text-align:center">
-  <em>
-  Нам важно понять, сможете ли вы быть с нами в этот день.<br>
-  Пожалуйста, дайте нам знать заранее, сможете ли вы присутствовать.
-  </em>
-</div>
+  <div class="container fade" style="text-align:center">
+    <em>
+      Нам важно понять, сможете ли вы быть с нами в этот день.<br>
+      Пожалуйста, дайте нам знать заранее.
+    </em>
+  </div>
 </section>
 
 <script>
-// ===== АНИМАЦИИ =====
-const obs=new IntersectionObserver(e=>e.forEach(i=>i.isIntersecting&&i.target.classList.add('show')));
-document.querySelectorAll('.fade').forEach(el=>obs.observe(el));
+/* анимации */
+const obs=new IntersectionObserver(e=>{
+  e.forEach(i=>i.isIntersecting&&i.target.classList.add("show"))
+});
+document.querySelectorAll(".fade").forEach(el=>obs.observe(el));
 
-// ===== ТАЙМЕР =====
+/* таймер */
 const target=new Date("2026-06-20T00:00:00").getTime();
 setInterval(()=>{
-  const now=new Date().getTime();
-  const diff=target-now;
-  d.innerText=Math.floor(diff/86400000);
-  h.innerText=Math.floor(diff/3600000)%24;
-  m.innerText=Math.floor(diff/60000)%60;
-  s.innerText=Math.floor(diff/1000)%60;
+  const n=new Date().getTime();
+  const d=target-n;
+  document.getElementById("d").innerText=Math.floor(d/86400000);
+  document.getElementById("h").innerText=Math.floor(d/3600000)%24;
+  document.getElementById("m").innerText=Math.floor(d/60000)%60;
+  document.getElementById("s").innerText=Math.floor(d/1000)%60;
 },1000);
 
-// ===== КАРТЫ =====
+/* карты */
 function openMap(addr){
   window.open("https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(addr));
 }
-
-// ===== TELEGRAM =====
-document.getElementById("guestForm").addEventListener("submit",function(e){
-  e.preventDefault();
-
-  const data=new FormData(this);
-  const text=
-`💍 Новая анкета
-👤 ${data.get("name")}
-📌 ${data.get("presence")}
-🍷 ${data.get("alcohol")}`;
-
-  fetch("https://api.telegram.org/botBOT_TOKEN/sendMessage",{
-    method:"POST",
-    headers:{"Content-Type":"application/json"},
-    body:JSON.stringify({
-      chat_id:"CHAT_ID",
-      text:text
-    })
-  }).then(()=>{
-    alert("Спасибо! Ответ отправлен 🤍");
-    this.reset();
-  });
-});
 </script>
 
 </body>
